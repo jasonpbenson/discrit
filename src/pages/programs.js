@@ -2,14 +2,13 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 
-const IndexPage = ({ data }) => {
+const About = ({ data }) => {
   const Homepage = data.allNodePage.edges[0].node
   return (
     <Layout>
+      <h3>{Homepage.title}</h3>
       <div dangerouslySetInnerHTML={{ __html: Homepage.body.value}}></div>
-      <Link to="/programs/">Programs</Link>
-      <Link to="/resources/">Resources</Link>
-      <Link to="/contact/">Contact</Link>
+      <Link to="/">Go Home</Link>
     </Layout>
   )
 }
@@ -17,7 +16,7 @@ const IndexPage = ({ data }) => {
 export const query = graphql`
 query{
   allNodePage (
-    filter: { id: { eq: "a9329ebb-c309-58a8-81a2-6f5f6394a72f" }}) {
+    filter: { id: { eq: "c40f93e2-9e14-5986-b75c-de37ba2002de" }}) {
     edges {
       node {
         id
@@ -30,4 +29,4 @@ query{
   }
 }`
 
-export default IndexPage
+export default About

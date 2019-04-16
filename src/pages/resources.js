@@ -16,7 +16,7 @@ const About = ({ data }) => {
 export const query = graphql`
 query{
   allNodePage (
-    filter: { id: { eq: "500c5685-86d3-59f8-baa1-dc4869f911ce" }}) {
+    filter: { id: { eq: "32344493-2440-5ed7-945c-a3cfb069c0c8" }}) {
     edges {
       node {
         id

@@ -4,7 +4,7 @@
  - easy to navigate and visually distinct
 
 **Structure**
-  1. Welcome
+  1. Welcome/index
      - name (Discrit)
      - description
      - bios (Joey and Chris)
