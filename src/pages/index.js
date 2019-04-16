@@ -1,15 +1,20 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
-import Layout from "../components/layout"
+import { graphql } from "gatsby"
+import { Layout, Nav } from '../components';
+
+const ROUTES = [
+  { title: "Programs", route: "/programs/" },
+  { title: "Resources", route: "/resources/" },
+  { title: "Contact", route: "/contact/" }
+];
 
 const IndexPage = ({ data }) => {
+  console.log(data)
   const Homepage = data.allNodePage.edges[0].node
   return (
     <Layout>
-      <div dangerouslySetInnerHTML={{ __html: Homepage.body.value}}></div>
-      <Link to="/programs/">Programs</Link>
-      <Link to="/resources/">Resources</Link>
-      <Link to="/contact/">Contact</Link>
+      <Nav routes={ROUTES} />
+      <div dangerouslySetInnerHTML={{ __html: Homepage.body.value }}></div>
     </Layout>
   )
 }
