@@ -1,6 +1,6 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
-import Layout from "../components/layout"
+import { graphql } from "gatsby"
+import { Layout } from "../components"
 
 const About = ({ data }) => {
   const Homepage = data.allNodePage.edges[0].node
@@ -8,7 +8,6 @@ const About = ({ data }) => {
     <Layout>
       <h3>{Homepage.title}</h3>
       <div dangerouslySetInnerHTML={{ __html: Homepage.body.value}}></div>
-      <Link to="/">Go Home</Link>
     </Layout>
   )
 }
